@@ -1,24 +1,25 @@
-
-import com.sun.deploy.util.ArrayUtil;
-
 import java.util.*;
 
 /**
- * Задание: создать журнал системных сообщений,
- * хранить его в LinkedHashSet,
- * добавить в коллекцию данные,
- * отсортировать данные,
- * вывести содержимое коллекции,
- * найти максимальный элемент,
- * удалить нужный элемент,
- * объединить две коллекции.
+ * @author Ковалев Дмитрий
+ *         Задание: создать журнал системных сообщений,
+ *         хранить его в LinkedHashSet,
+ *         добавить в коллекцию данные,
+ *         отсортировать данные,
+ *         вывести содержимое коллекции,
+ *         найти максимальный элемент,
+ *         удалить нужный элемент,
+ *         объединить две коллекции.
  */
 
 public class Main {
 
     public static void main(String[] params) {
-        LinkedHashSet<SystemError> systemErrors = new LinkedHashSet<SystemError>();
 
+        LinkedHashSet<SystemError> systemErrors = new LinkedHashSet<SystemError>();
+/**
+ * Добавление объектов в LinkedHashSet.
+ */
         systemErrors.add(new SystemError(1, "File not found", "The system cannot find the file"));
         systemErrors.add(new SystemError(2, "Not enough memory", "Not enough storage is available"));
         systemErrors.add(new SystemError(4, "Read error", "The system cannot read the file"));
@@ -30,12 +31,16 @@ public class Main {
         while (errorIterator.hasNext()) {
             System.out.println(errorIterator.next());
         }
-
+/**
+ * Создаем новую коллекцию объектов для дальнейшего соединения ее с systemErrors.
+ */
         LinkedHashSet<SystemError> anotherSystemErrors = new LinkedHashSet<SystemError>();
         anotherSystemErrors.add(new SystemError(7, "Max sessions reached", "The maximum number of sessions has been reached."));
         anotherSystemErrors.add(new SystemError(8, "Restart failed", "The restart operation failed."));
         anotherSystemErrors.add(new SystemError(9, "Shutdown error", "The shutdown operation failed."));
-
+/**
+ * Объединение коллекций.
+ */
         systemErrors.addAll(anotherSystemErrors);
 
         System.out.println("After combining: " + systemErrors);
