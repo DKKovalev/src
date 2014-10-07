@@ -55,11 +55,11 @@ public class SystemError implements Comparable<SystemError> {
      */
     @Override
     public String toString() {
-        return "ErrorObject{" +
+        return "ErrorObject: " +
                 "errorId = " + errorId +
-                ", errorTitle =' " + errorTitle + '\'' +
-                ", errorDescription =' " + errorDescription + '\'' +
-                '}';
+                ", errorTitle = '" + errorTitle + '\'' +
+                ", errorDescription = '" + errorDescription + '\'' +
+                ';';
     }
 
     /**
