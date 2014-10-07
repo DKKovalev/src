@@ -1,3 +1,6 @@
+/**
+ * Created by PsichO on 06.10.2014.
+ */
 public class SystemError implements Comparable<SystemError> {
     int errorId;
     String errorTitle;
@@ -19,12 +22,6 @@ public class SystemError implements Comparable<SystemError> {
     /**
      * Функция для задания одинакового хэшкода для входного объекта.
      * Она необходима для удаления нужного элемента.
-     *
-     * Хешкод --  это битовая строка фиксированной длины, полученная из массива произвольной длины.
-     * Под массивом произвольной длины мы будем понимать объект.
-     *
-     * Этот метод реализован таким образом, что для одного и того-же входного объекта, хеш-код всегда будет одинаковым.
-     *
      * @return возвращает хэшкод для объекта.
      */
     public int hashCode(){
@@ -58,18 +55,18 @@ public class SystemError implements Comparable<SystemError> {
      */
     @Override
     public String toString() {
-        return "ErrorObject: " +
+        return "ErrorObject{" +
                 "errorId = " + errorId +
                 ", errorTitle =' " + errorTitle + '\'' +
                 ", errorDescription =' " + errorDescription + '\'' +
-                ';';
+                '}';
     }
 
     /**
      * Функция, необходимая для сортировки.
      * @param o входной объект.
-     * @return метод возвращает отрицательное число если один объект меньше другого,
-     * положительное, если больше и ноль если объекты равны.
+     * @return method must return negative number if current object is less than other object,
+     * positive number if current object is greater than other object and zero if both objects are equal to each other.
      */
     @Override
     public int compareTo(SystemError o) {
