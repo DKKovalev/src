@@ -19,6 +19,10 @@ public class SystemError implements Comparable<SystemError> {
         this.errorDescription = errorDescription;
     }
 
+    public SystemError(){
+
+    }
+
     /**
      * Функция для задания одинакового хэшкода для входного объекта.
      * Она необходима для удаления нужного элемента.
@@ -71,5 +75,29 @@ public class SystemError implements Comparable<SystemError> {
     @Override
     public int compareTo(SystemError o) {
         return toString().compareTo(o.toString());
+    }
+
+    public int getErrorId() {
+        return errorId;
+    }
+
+    public void setErrorId(int errorId) {
+        this.errorId = errorId;
+    }
+
+    public String getErrorTitle() {
+        return errorTitle;
+    }
+
+    public void setErrorTitle(String errorTitle) {
+        this.errorTitle = errorTitle;
+    }
+
+    public String getErrorDescription() {
+        return errorDescription;
+    }
+
+    public void setErrorDescription(String errorDescription) {
+        this.errorDescription = errorDescription;
     }
 }
